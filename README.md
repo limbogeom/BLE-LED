@@ -1,4 +1,4 @@
-# BLE-LED
+# BLE-LED-AMBILIGHT
 
 Turn your screen into an Ambilight setup. This grabs the average color of
 your display in real time and streams it straight to your ELK-BLEDOB LED
