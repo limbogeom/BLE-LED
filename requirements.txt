@@ -1,2 +1,22 @@
-bleak>=1.1.0
-mss>=10.0.0
+# Core
+bleak>=0.21          # BLE communication (Windows/macOS/Linux)
+mss>=9.0.1            # Screenshot capture: Windows 7, macOS, Linux X11
+Pillow>=10.0          # Image decoding for grim/portal Wayland backends
+
+# Windows 8/10/11 only - GPU-accelerated capture via Desktop Duplication API
+dxcam>=0.0.5; sys_platform == "win32"
+
+# Linux Wayland (GNOME/KDE) portal fallback - DBus/GLib bindings
+PyGObject>=3.44; sys_platform == "linux"
+
+# --- Not installable via pip, install through your system package manager ---
+# grim            - required for the fast Wayland path on wlroots compositors
+#                   (Sway, Hyprland, river, ...). e.g.:
+#                     apt install grim        (Debian/Ubuntu)
+#                     pacman -S grim           (Arch)
+#                     dnf install grim         (Fedora)
+# python3-gi      - if PyGObject fails to build from pip, install the system
+#                   package instead (provides the same `gi` module, needed
+#                   for the XDG portal Wayland fallback). e.g.:
+#                     apt install python3-gi   (Debian/Ubuntu)
+#                     pacman -S python-gobject  (Arch)
