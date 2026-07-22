@@ -5,7 +5,7 @@ import platform
 import sys
 import warnings
 
-from mss import MSS
+from mss import mss
 
 from ble_led.color import Color
 
